@@ -1,0 +1,8 @@
+{
+  "name": "cp3108b_module_dev",
+  "version": "0.1.0",
+  "description": "Development repository for CP3108B modules project",
+  "main": "index.js",
+  "scripts": {},
+  "license": "ISC"
+}
