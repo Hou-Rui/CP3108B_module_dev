@@ -1,6 +1,11 @@
 {
   "module_name": "RUNES",
   "module_prefix": "rn",
+  "module_source_files": [
+    "src/gl-matrix.js",
+    "src/webGLgraphics.js",
+    "src/webGLrune.js"
+  ],
   "module_symbols": [
     "show",
     "color",
