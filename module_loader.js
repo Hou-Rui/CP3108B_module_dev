@@ -22,9 +22,16 @@ function loadModule(moduleDirList, moduleName) {
   let modulePath = stringFromFile('modules/' + dirname)
   let moduleObj = JSON.parse(modulePath)
   let sourceFileNames = moduleObj["module_source_files"]
-  for (let sourceFileName of sourceFileNames) {
-    let data = stringFromFile()
+  for (let url of sourceFileNames) {
+    dynamicallyLoadScript(url)
   }
 }
 
-function insertSourceFile()
+function dynamicallyLoadScript(url) {
+  let script = document.createElement("script")
+  script.src = sourceFileName
+  script.async = false
+  script.defer = true
+  document.head.appendChild(script)
+}
+
