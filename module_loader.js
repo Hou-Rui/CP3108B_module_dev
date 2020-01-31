@@ -22,26 +22,28 @@ const ModuleLoader = (function() {
     if (dirname === undefined) {
       throw 'Unknown module: ' + moduleName;
     }
-    let modulePath = stringFromFile('modules/' + dirname);
-    let moduleObj = JSON.parse(modulePath);
+    let modulePath = 'modules/' + dirname;
+    let moduleObj = JSON.parse(stringFromFile(modulePath + '/module_config.json'));
     let sourceFileNames = moduleObj['module_source_files'];
     for (let url of sourceFileNames) {
-      dynamicallyLoadScript(url);
+      dynamicallyLoadScript(modulePath + '/' + url);
     }
   }
 
   function dynamicallyLoadScript(url) {
     let script = document.createElement('script');
-    script.src = sourceFileName;
+    script.src = url;
     script.async = false;
     script.defer = true;
     document.head.appendChild(script);
   }
 
   // main code
-  let moduleDirList = getModuleDirList();
-  loadModule(moduleDirList, 'RUNES');
-  return {
-    loadModule: loadModule
+  window.onload = () => {
+    let moduleDirList = getModuleDirList();
+    loadModule(moduleDirList, 'RUNES');
+    return {
+      loadModule: loadModule
+    };
   };
 })();

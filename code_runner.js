@@ -6,4 +6,5 @@ const CodeRunner = (() => {
     let data = textarea.value;
     eval(data);
   }
+  return {execute: execute};
 })();
