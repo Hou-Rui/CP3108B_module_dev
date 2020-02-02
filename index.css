@@ -22,7 +22,7 @@ body {
 #body-div {
   display: flex;
   flex-direction: row;
-  height: 400px;
+  height: 800px;
 }
 
 #code-textarea {
