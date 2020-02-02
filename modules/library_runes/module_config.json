@@ -4,7 +4,8 @@
   "module_source_files": [
     "src/gl-matrix.js",
     "src/webGLgraphics.js",
-    "src/webGLrune.js"
+    "src/webGLrune.js",
+    "src/webGLinit.js"
   ],
   "module_symbols": [
     "show",

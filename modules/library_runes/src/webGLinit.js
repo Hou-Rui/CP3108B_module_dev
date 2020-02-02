@@ -1,0 +1,1 @@
+getReadyWebGLForCanvas('2d');
