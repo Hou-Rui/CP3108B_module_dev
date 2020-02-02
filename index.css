@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#navbar-div {
+  display: flex;
+  height: 40px;
+  flex-direction: row;
+}
+
+#title-div {
+  display: flex;
+  margin: auto;
+  flex: 1 0 auto;
+}
+
+#exec-button {
+  flex: 0 1 100px;
+}
+
+#body-div {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+}
+
+#code-textarea {
+  width: 50%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+#output-div {
+  width: 50%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}

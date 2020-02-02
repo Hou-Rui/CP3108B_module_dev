@@ -6,26 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <style>
-    textarea {
-      width: 50%;
-      height: 400px;
-      padding: 12px 20px;
-      box-sizing: border-box;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      background-color: #f8f8f8;
-      font-size: 16px;
-      resize: none;
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-
-  <h3>Demo of new dataloader</h3>
-  <textarea id="code-textarea">// Codes... </textarea>
-  <button onclick="CodeRunner.execute()">Run!</button>
+  <div id="navbar-div">
+    <div id="title-div">Demo of new data loader</div>
+    <button id="exec-button" onclick="CodeRunner.execute()">Run!</button>
+  </div>
+  <div id="body-div">
+    <textarea id="code-textarea">// Codes... </textarea>
+    <div id="output-div"></div>
+  </div>
   <script src="module_loader.js"></script>
   <script src="code_runner.js"></script>
 </body>
