@@ -35,13 +35,14 @@ const ModuleLoader = (function() {
     script.src = url;
     script.async = false;
     script.defer = true;
-    document.head.appendChild(script);
+    document.body.appendChild(script);
   }
 
   // main code
   window.onload = () => {
     let moduleDirList = getModuleDirList();
     loadModule(moduleDirList, 'RUNES');
+    loadModule(moduleDirList, 'CORE');
     return {
       loadModule: loadModule
     };
