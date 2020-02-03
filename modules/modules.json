@@ -1,5 +1,6 @@
 {
   "module_dirs": {
+    "CORE": "library_core",
     "RUNES": "library_runes"
   }
 }
