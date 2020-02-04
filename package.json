@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Development repository for CP3108B modules project",
   "scripts": {
-    "start": "python3 -m http.server"
+    "posix-start": "python3 -m http.server",
+    "windows-start": "python -m hhtp.server"
   },
   "license": "ISC"
 }
