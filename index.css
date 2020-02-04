@@ -12,10 +12,31 @@ body {
 #title-div {
   display: flex;
   margin: auto;
+  justify-content: center;
   flex: 1 0 auto;
 }
 
 #exec-button {
+  flex: 0 1 100px;
+}
+
+#input-module-div {
+  display: flex;
+  height: 40px;
+  flex-direction: row;
+}
+
+#input-module-p {
+  display: flex;
+  width: 270px;
+}
+
+#module-input {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+#load-module-button {
   flex: 0 1 100px;
 }
 

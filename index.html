@@ -5,14 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Module loader demo</title>
   <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
   <div id="navbar-div">
-    <div id="title-div">Demo of new data loader</div>
-    <button id="exec-button" onclick="CodeRunner.execute()">Run!</button>
+    <div id="title-div">Demo of new module loader</div>
+    <button id="exec-button" onclick="CodeRunner.execute()">run</button>
+  </div>
+  <div id="input-module-div">
+    <p id="input-module-p">Module names (separate by space):</p>
+    <input id="module-input">
+    <button id="load-module-button" onclick="CodeRunner.loadInputModules()">load</button>
   </div>
   <div id="body-div">
     <textarea id="code-textarea">// Codes... </textarea>

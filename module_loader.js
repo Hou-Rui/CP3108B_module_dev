@@ -38,13 +38,8 @@ const ModuleLoader = (function() {
     document.body.appendChild(script);
   }
 
-  // main code
-  window.onload = () => {
-    let moduleDirList = getModuleDirList();
-    loadModule(moduleDirList, 'RUNES');
-    loadModule(moduleDirList, 'CORE');
-    return {
-      loadModule: loadModule
-    };
+  return {
+    loadModule: loadModule,
+    getModuleDirList: getModuleDirList
   };
 })();
