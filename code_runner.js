@@ -43,7 +43,7 @@ const CodeRunner = (() => {
     try {
       outputValue = eval(data);
     } catch (errorMessage) {
-      outputError(errorMessage);
+      output(errorMessage);
       return;
     }
     if (outputValue.$canvas !== undefined) {
