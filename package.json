@@ -4,7 +4,7 @@
   "description": "Development repository for CP3108B modules project",
   "scripts": {
     "posix-start": "python3 -m http.server",
-    "windows-start": "python -m hhtp.server"
+    "windows-start": "python -m http.server"
   },
   "license": "ISC"
 }
