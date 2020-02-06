@@ -23,7 +23,7 @@ const CodeRunner = (() => {
       }
     }
     if (verbose) {
-      output('Moduls loaded: ' + loadedModules.join(', '), false);
+      output('Modules loaded: ' + loadedModules.join(', '), false);
     }
   }
 
