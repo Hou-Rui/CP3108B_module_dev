@@ -2,7 +2,7 @@
 
 const CodeRunner = (() => {
   const loadedModules = [];
-  function loadInputModules() {
+  function loadInputModules(verbose=true) {
     let moduleDirList;
     try {
       moduleDirList = ModuleLoader.getModuleDirList();
@@ -16,12 +16,14 @@ const CodeRunner = (() => {
       if (!loadedModules.includes(name)) {
         try {
           ModuleLoader.loadModule(moduleDirList, name);
-          output('Module ' + name + ' is loaded. ', false);
+          loadedModules.push(name);
         } catch (errorMessage) {
           output(errorMessage, true);
         }
-        loadedModules.push(name);
       }
+    }
+    if (verbose) {
+      output('Moduls loaded: ' + loadedModules.join(', '), false);
     }
   }
 
