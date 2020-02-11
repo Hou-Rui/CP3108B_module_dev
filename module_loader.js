@@ -44,10 +44,10 @@ const ModuleLoader = (function() {
     let unusedSymbols = allSymbols.filter(x => !usedSymbols.includes(x));
     let scriptText = '';
     for (let symbol of unusedSymbols) {
-      scriptText += `${symbol} = undefined;\n`
+      scriptText += `${symbol} = undefined;\n`;
     }
     let script = document.createElement('script');
-    script.text = script;
+    script.text = scriptText;
     script.async = false;
     document.body.appendChild(script);
   }
