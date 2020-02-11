@@ -1,7 +1,7 @@
 'use strict';
 
 const ModuleLoader = (function() {
-  function stringFromFile(path) {
+  function stringFromFile(path) { // private
     let request = new XMLHttpRequest();
     request.open('GET', path, false);
     request.send(null);
@@ -17,7 +17,7 @@ const ModuleLoader = (function() {
     return obj['module_dirs'];
   }
 
-  function loadModule(moduleDirList, moduleName) {
+  function loadModule(moduleDirList, moduleName, usedSymbols = []) {
     let dirname = moduleDirList[moduleName];
     if (dirname === undefined) {
       throw 'Unknown module: ' + moduleName;
@@ -25,16 +25,30 @@ const ModuleLoader = (function() {
     let modulePath = 'modules/' + dirname;
     let moduleObj = JSON.parse(stringFromFile(modulePath + '/module_config.json'));
     let sourceFileNames = moduleObj['module_source_files'];
+    let allSymbols = moduleObj['module_symbols'];
     for (let url of sourceFileNames) {
       dynamicallyLoadScript(modulePath + '/' + url);
+      blockUnusedSymbols(allSymbols, usedSymbols);
     }
   }
 
-  function dynamicallyLoadScript(url) {
+  function dynamicallyLoadScript(url) { // private
     let script = document.createElement('script');
     script.src = url;
     script.async = false;
     script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function blockUnusedSymbols(allSymbols, usedSymbols) {
+    let unusedSymbols = allSymbols.filter(x => !usedSymbols.includes(x));
+    let scriptText = '';
+    for (let symbol of unusedSymbols) {
+      scriptText += `${symbol} = undefined;\n`
+    }
+    let script = document.createElement('script');
+    script.text = script;
+    script.async = false;
     document.body.appendChild(script);
   }
 
