@@ -1,7 +1,6 @@
 {
   "module_dirs": {
     "BASE": "base_env",
-    "CORE": "library_core",
     "RUNES": "library_runes",
     "CURVES": "library_curves",
     "SOUNDS": "library_sounds"

@@ -3,7 +3,8 @@
   "module_prefix": "",
   "module_source_files": [
     "src/list.js",
-    "src/tree.js"
+    "src/tree.js",
+    "src/core.js"
   ],
   "module_symbols": [
     "pair",
@@ -32,7 +33,9 @@
     "is_empty_tree",
     "entry",
     "left_branch",
-    "right_branch"
+    "right_branch",
+    "display",
+    "math_abs"
   ],
   "module_undocumented_symbols": [
     "array_test",
